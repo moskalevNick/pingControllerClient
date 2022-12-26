@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RequestType } from '../../types';
+import { RequestType, ResponseType } from '../../types';
 import { modules } from '../modules';
 import { globalActions } from './actions';
 
@@ -7,6 +7,7 @@ const globalSlice = createSlice({
   name: modules.GLOBAL,
   initialState: {
     requests: [] as RequestType[],
+    response: null as ResponseType | null,
   },
   reducers: {
     setRequests: (state, action) => {
@@ -21,6 +22,12 @@ const globalSlice = createSlice({
       })
       .addCase(globalActions.deleteRequests.fulfilled, (state) => {
         state.requests = [];
+      })
+      .addCase(globalActions.getResponse.fulfilled, (state, action) => {
+        state.response = action.payload;
+      })
+      .addCase(globalActions.createResponse.fulfilled, (state, action) => {
+        state.response = action.payload;
       });
   },
 });

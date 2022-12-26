@@ -1,3 +1,18 @@
 .container {
-  background-color: rgb(135, 148, 135);
+  background-color: rgb(155, 155, 155);
+  min-height: calc(100vh - 92px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textArea {
+  width: 300px;
+  height: 200px;
+  resize: both;
+  margin: 20px 0;
+}
+
+.header {
+  margin-top: 40px;
 }
