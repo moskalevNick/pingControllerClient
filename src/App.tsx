@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path='/' element={<HomeModule />} />
-          <Route path='request' element={<RequestModule />} />
+          <Route path='/request' element={<RequestModule />} />
           <Route path='*' element={<Navigate to='/' replace={true} />} />
         </Route>
       </Routes>
