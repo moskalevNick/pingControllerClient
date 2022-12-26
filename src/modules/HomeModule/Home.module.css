@@ -1,0 +1,9 @@
+.container {
+  background-color: rgb(211, 211, 211);
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 100px;
+}
