@@ -11,7 +11,7 @@ export const RequestModule = () => {
 
   useEffect(() => {
     dispatch(globalActions.getResponse());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (response) {
