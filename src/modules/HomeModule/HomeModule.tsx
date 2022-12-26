@@ -23,12 +23,16 @@ export const HomeModule = () => {
         <button onClick={deleteRequests}>Удалить все данные</button>
       </div>
       <hr />
-      {requests.map((req) => (
-        <div key={req.id} className={styles.requestWrapper}>
-          <pre>{JSON.stringify(req.body, null, 2)}</pre>
-          <hr />
-        </div>
-      ))}
+      {requests ? (
+        requests.map((req) => (
+          <div key={req.id} className={styles.requestWrapper}>
+            <pre>{JSON.stringify(req.body, null, 2)}</pre>
+            <hr />
+          </div>
+        ))
+      ) : (
+        <div className={styles.noData}>нет данных</div>
+      )}
     </div>
   );
 };
