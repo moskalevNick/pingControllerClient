@@ -25,10 +25,12 @@ export const HomeModule = () => {
       <hr />
       {requests ? (
         requests.map((req) => (
-          <div key={req.id} className={styles.requestWrapper}>
-            <pre>{JSON.stringify(req.body, null, 2)}</pre>
+          <>
+            <div key={req.id} className={styles.requestWrapper}>
+              <pre>{req.body}</pre>
+            </div>
             <hr />
-          </div>
+          </>
         ))
       ) : (
         <div className={styles.noData}>нет данных</div>
